@@ -9,6 +9,7 @@ public class DiscordController : MonoBehaviour
     public string details;
     public string state;
     public string LI;
+    [SerializeField] private int DiscordProjectID;
 
     //Hello modder, I have left these variables public so if you make new levels you can update the status
 
@@ -21,7 +22,7 @@ public class DiscordController : MonoBehaviour
 
 
 
-        discord = new Discord.Discord(860617980207431720, (System.UInt64)Discord.CreateFlags.NoRequireDiscord);
+        discord = new Discord.Discord(DiscordProjectID, (System.UInt64)Discord.CreateFlags.NoRequireDiscord);
         var activityManager = discord.GetActivityManager();
         var activity = new Discord.Activity
         {
